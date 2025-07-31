@@ -1,0 +1,7 @@
+.env
+major_st.index
+*.kv
+*.npy
+*.pkl
+*.vec
+node_modules/
