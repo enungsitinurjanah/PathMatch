@@ -9,6 +9,7 @@ import re
 import json
 import pickle
 
+
 def normalize(vectors):
     """
     Normalize the vectors to unit length.
