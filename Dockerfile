@@ -1,16 +1,13 @@
-# Gunakan base image Python
-FROM python:3.10-slim
+FROM python:3.10-slim-bullseye
 
-# Set working directory
 WORKDIR /app
 
-# Copy file requirements.txt dan install dependensi
 COPY requirements.txt .
 
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt && \
+    rm -rf /root/.cache && \
+    find /usr/local/lib/python3.10/site-packages -name "*.pyc" -delete
 
-# Copy semua isi backend ke dalam container
 COPY . .
 
-# Jalankan FastAPI pakai Uvicorn
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "10000"]
