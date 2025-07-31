@@ -5,6 +5,7 @@ import app.recommender as rec
 from typing import Optional
 from fastapi.middleware.cors import CORSMiddleware
 
+
 JOB_JSON_PATH = "preprocessed/linkedin_jobs.json"
 JOB_INDEX_PATH = "app/embeddings/jobs_st.index"
 COURSE_JSON_PATH = "preprocessed/edx_courses.json"
